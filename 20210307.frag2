@@ -1,0 +1,16 @@
+<?php include "config.php";
+if(isset($_POST['but_submit'])){
+    $uname=mysqli_real_escape_string
+    ($con,$_POST['txt_Uname']);
+    $password=mysqli_real_escape_string($con,$_POST['txt_pwd']);
+    if($Uname !=""&&password!=""){
+        $sql_query="select count(*)"as cnt User from Users where Username='".$Uname."' and password='"".$ password."'";
+     $result=my sqli_fetch_array($result);
+     $row=my sqli_fetch_($result);
+     $count=$.row['cnt User'];
+     if($count>0){$_SESSION['Uname]=$Uname;header('Location:home.php)');
+     }else{echo"invalid username and password";
+     }
+    }
+    }
+}
